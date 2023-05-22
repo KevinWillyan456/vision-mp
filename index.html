@@ -12,9 +12,14 @@
             href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
             rel="stylesheet"
         />
+        <script
+            src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
-        <section class="main-frame">
+        <section class="main-frame" style="display: none">
             <div class="logo-game">
                 <img
                     src="https://drive.google.com/uc?export=download&id=1SfaNr2VSMqAEXA_Ffy-LiPSHVmkS14ml"
@@ -22,12 +27,113 @@
             </div>
 
             <div class="container-options">
-                <div>Começar</div>
+                <div id="start">Começar</div>
                 <div>Opções</div>
-                <div>Sobre</div>
+                <div id="about">Sobre</div>
             </div>
 
             <div class="theme-description">Tema: Poluição Visual</div>
+
+            <div class="container-difficulty" style="display: none">
+                <div data-size="small">Pequeno</div>
+                <div data-size="medium">Médio</div>
+                <div data-size="large">Grande</div>
+            </div>
+
+            <div class="board-choice" style="display: none">
+                Escolha o tamanho do tabuleiro
+            </div>
+        </section>
+
+        <section class="main-game">
+            <div class="title-game">Tabuleiro Pequeno</div>
+
+            <div class="container-board-pieces">
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1VR4WJtXcran8w3sl4E_wMtu5o3RgNssD"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1lLjjpIjmLUJCWKLzuiwNo8bPumnOYIp5"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1OWiMJUNsM1Ig6wfwdmhiY_fOq7uvUqjD"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+                <div class="piece">
+                    <img
+                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    />
+
+                    <div class="piece-back"></div>
+                </div>
+            </div>
         </section>
 
         <script src="js/index.js"></script>
