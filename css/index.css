@@ -134,6 +134,8 @@
     justify-content: center;
 
     background-color: #343434;
+
+    position: relative;
 }
 .main-game .title-game {
     position: absolute;
@@ -165,7 +167,7 @@
 .main-game .container-board-pieces .piece {
     width: 200px;
     height: 100px;
-    background-color: #d9d9d9;
+    background-color: black;
     cursor: pointer;
 
     display: flex;
@@ -175,4 +177,9 @@
 }
 .main-game .container-board-pieces .piece img {
     width: 100%;
+}
+.main-game .container-board-pieces .piece .piece-back {
+    width: 200px;
+    height: 100px;
+    background-color: #d9d9d9;
 }

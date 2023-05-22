@@ -1,6 +1,14 @@
 const startButton = document.querySelector('#start')
 const aboutButton = document.querySelector('#about')
 
+const stageElementsStart = document.querySelectorAll(
+    '.logo-game, .container-options, .theme-description'
+)
+const stageElementsBoardChoice = document.querySelectorAll(
+    '.board-choice, .container-difficulty'
+)
+const containerBoardPieces = document.querySelector('.container-board-pieces')
+
 const data = [
     {
         id: 1,
@@ -20,12 +28,29 @@ const data = [
     },
 ]
 
-const stageElementsStart = document.querySelectorAll(
-    '.logo-game, .container-options, .theme-description'
-)
-const stageElementsBoardChoice = document.querySelectorAll(
-    '.board-choice, .container-difficulty'
-)
+const gameConfig = {
+    boardSize: {
+        small: 12,
+        medium: 24,
+        large: 48,
+    },
+}
+
+function generatorBoardPieces(size) {
+    for (let i = 0; i < size; i++) {
+        containerBoardPieces.innerHTML += `
+            <div class="piece">
+                <img style="display: none;"
+                    src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                />
+
+                <div class="piece-back"></div>
+            </div>
+        `
+    }
+}
+
+generatorBoardPieces(gameConfig.boardSize.small)
 
 startButton.addEventListener('click', () => {
     stageElementsStart.forEach((element) => $(element).toggle())
