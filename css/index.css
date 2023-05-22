@@ -2,4 +2,79 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+:root {
+    --color-yellow: #f4f85b;
+    --color-white: #ffffff;
+    --color-black: #000000;
+}
+
+.main-frame {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url('https://drive.google.com/uc?export=download&id=16CrRv-0pCUBRb661y7HJJfGW4modHkeX');
+}
+.main-frame .logo-game {
+    width: 864px;
+    height: 96px;
+    position: absolute;
+    top: 200px;
+    left: calc(50% - 864px / 2);
+    pointer-events: none;
+}
+.main-frame .logo-game img {
+    width: 100%;
+}
+.main-frame .container-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-frame .container-options div {
+    width: 300px;
+    height: 60px;
+    background-color: var(--color-yellow);
+    font-size: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    margin-bottom: 15px;
+
+    border: 2px solid var(--color-black);
+    border-radius: 5px;
+}
+.main-frame .container-options div:last-child {
+    margin-bottom: 0;
+}
+.main-frame .theme-description {
+    width: 672px;
+    position: absolute;
+    bottom: 100px;
+    left: calc(50% - 672px / 2);
+    font-size: 32px;
+
+    text-shadow: 0 0 5px var(--color-black), 0 0 5px var(--color-black),
+        0 0 5px var(--color-black), 0 0 5px var(--color-black),
+        0 0 5px var(--color-black), 0 0 5px var(--color-black),
+        0 0 5px var(--color-black), 0 0 5px var(--color-black),
+        0 0 5px var(--color-black), 0 0 5px var(--color-black),
+        0 0 5px var(--color-black), 0 0 5px var(--color-black),
+        0 0 5px var(--color-black), 0 0 5px var(--color-black),
+        0 0 5px var(--color-black), 0 0 5px var(--color-black),
+        0 0 5px var(--color-black), 0 0 5px var(--color-black),
+        0 0 5px var(--color-black), 0 0 5px var(--color-black);
+
+    text-align: center;
+    color: var(--color-white);
 }
