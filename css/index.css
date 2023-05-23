@@ -248,3 +248,55 @@
 .main-game .container-board-pieces .piece.turned .piece-back {
     background-color: #ffbe32;
 }
+
+.main-game .completed-game {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+}
+
+.main-game .completed-game .play-again {
+    animation: play-again-entrace 200ms linear;
+    background-color: #0d0d0d;
+    padding: 20px;
+    border-radius: 10px;
+}
+@keyframes play-again-entrace {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.main-game .completed-game .play-again .title-play-again {
+    font-size: 25px;
+}
+.main-game .completed-game .play-again .icon-play-again {
+    transition: 200ms;
+    display: flex;
+    justify-content: center;
+    background-color: #ffbe32;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 4px 0;
+}
+.main-game .completed-game .play-again .icon-play-again:hover {
+    background-color: #ff9532;
+}
+.main-game .completed-game .play-again .icon-play-again ion-icon {
+    width: 40px;
+    height: 40px;
+}
