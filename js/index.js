@@ -1,3 +1,10 @@
+let indexBoardChoice
+let previousPiece = '',
+    nextPiece = ''
+let duplicateArray
+let running = true
+let allTurned = []
+
 const startButton = document.querySelector('#start')
 const aboutButton = document.querySelector('#about')
 
@@ -8,6 +15,10 @@ const stageElementsBoardChoice = document.querySelectorAll(
     '.board-choice, .container-difficulty'
 )
 const containerBoardPieces = document.querySelector('.container-board-pieces')
+
+const allDifficultyChoice = document.querySelectorAll(
+    '.container-difficulty div'
+)
 
 const data = [
     {
@@ -204,6 +215,10 @@ const data = [
     },
 ]
 
+// let newArray = data.slice(0, 5);
+let preparedArray = []
+let shuffledData
+
 const gameConfig = {
     boardSize: {
         small: 12,
@@ -215,12 +230,12 @@ const gameConfig = {
 function generatorBoardPieces(size) {
     for (let i = 0; i < size; i++) {
         containerBoardPieces.innerHTML += `
-            <div class="piece" data-id="${data[i].id}">
+            <div class="piece" data-id="${shuffledData[i].id}">
                 <img style="display: none;"
                     src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
                 />
 
-                <div class="piece-back"></div>
+                <div class="piece-back">${shuffledData[i].id}</div>
             </div>
         `
     }
@@ -232,54 +247,162 @@ function actionsInTheElement() {
     const allPieces = document.querySelectorAll('.piece')
 
     allPieces.forEach((element) => {
-        console.log(allPieces)
+        // console.log(allPieces)
         element.addEventListener('click', () => {
-            // alert($(element).data('id'))
-            element.classList.toggle('turn')
+            if (running) {
+                if ($(element).hasClass('turn')) {
+                    return
+                } else {
+                    manageIinteractionsWithBoard($(element).data('id'))
+                    element.classList.toggle('turn')
+                }
+                // alert($(element).data('id'))
+            }
         })
     })
 }
 
-const allDifficultyChoice = document.querySelectorAll(
-    '.container-difficulty div'
-)
+function shuffleArray(array) {
+    var shuffledArray = array.slice()
 
-allDifficultyChoice.forEach((element) => {
-    element.addEventListener('click', () => {
-        const tipo = $(element).data('size')
+    for (var i = shuffledArray.length - 1; i > 0; i--) {
+        var randomIndex = Math.floor(Math.random() * (i + 1))
 
-        console.log(tipo)
+        var temp = shuffledArray[i]
+        shuffledArray[i] = shuffledArray[randomIndex]
+        shuffledArray[randomIndex] = temp
+    }
+    return shuffledArray
+}
 
-        if (tipo == 'small') {
-            generatorBoardPieces(gameConfig.boardSize.small)
-            $('.main-frame').toggle()
-            $('.main-game').toggle()
-            $('.main-game .container-board-pieces').addClass('small')
-            $('.main-game .title-game').html('Tabuleiro Pequeno')
-            return
-        }
-        if (tipo == 'medium') {
-            generatorBoardPieces(gameConfig.boardSize.medium)
-            $('.main-frame').toggle()
-            $('.main-game').toggle()
-            $('.main-game .container-board-pieces').addClass('medium')
-            $('.main-game .title-game').html('Tabuleiro Médio')
-            return
-        }
-        if (tipo == 'large') {
-            generatorBoardPieces(gameConfig.boardSize.large)
-            $('.main-frame').toggle()
-            $('.main-game').toggle()
-            $('.main-game .container-board-pieces').addClass('large')
-            $('.main-game .title-game').html('Tabuleiro Grande')
-            return
-        }
+function prepareArray(array) {
+    switch (indexBoardChoice) {
+        case 'small':
+            duplicateArray = array.slice(0, 6)
+            for (let i = 0; i < duplicateArray.length; i++) {
+                preparedArray.push(duplicateArray[i])
+                preparedArray.push(duplicateArray[i])
+            }
+            break
+
+        case 'medium':
+            duplicateArray = array.slice(0, 12)
+            for (let i = 0; i < duplicateArray.length; i++) {
+                preparedArray.push(duplicateArray[i])
+                preparedArray.push(duplicateArray[i])
+            }
+            break
+
+        case 'large':
+            duplicateArray = array.slice(0, 24)
+            for (let i = 0; i < duplicateArray.length; i++) {
+                preparedArray.push(duplicateArray[i])
+                preparedArray.push(duplicateArray[i])
+            }
+            break
+    }
+}
+
+function allDifficultyChoiceFunction() {
+    allDifficultyChoice.forEach((element) => {
+        element.addEventListener('click', () => {
+            const tipo = $(element).data('size')
+
+            if (tipo == 'small') {
+                indexBoardChoice = 'small'
+                prepareArray(data)
+                shuffledData = shuffleArray(preparedArray)
+                generatorBoardPieces(gameConfig.boardSize.small)
+                $('.main-frame').toggle()
+                $('.main-game').toggle()
+                $('.main-game .container-board-pieces').addClass('small')
+                $('.main-game .title-game').html('Tabuleiro Pequeno')
+                return
+            }
+            if (tipo == 'medium') {
+                indexBoardChoice = 'medium'
+                prepareArray(data)
+                shuffledData = shuffleArray(preparedArray)
+                generatorBoardPieces(gameConfig.boardSize.medium)
+                $('.main-frame').toggle()
+                $('.main-game').toggle()
+                $('.main-game .container-board-pieces').addClass('medium')
+                $('.main-game .title-game').html('Tabuleiro Médio')
+                return
+            }
+            if (tipo == 'large') {
+                indexBoardChoice = 'large'
+                prepareArray(data)
+                shuffledData = shuffleArray(preparedArray)
+                generatorBoardPieces(gameConfig.boardSize.large)
+                $('.main-frame').toggle()
+                $('.main-game').toggle()
+                $('.main-game .container-board-pieces').addClass('large')
+                $('.main-game .title-game').html('Tabuleiro Grande')
+                return
+            }
+        })
     })
-})
+}
 
-// generatorBoardPieces(gameConfig.boardSize.small)
+function startButtonFuction() {
+    startButton.addEventListener('click', () => {
+        stageElementsStart.forEach((element) => $(element).toggle())
+        stageElementsBoardChoice.forEach((element) => $(element).toggle())
+    })
+}
 
-startButton.addEventListener('click', () => {
-    stageElementsStart.forEach((element) => $(element).toggle())
-    stageElementsBoardChoice.forEach((element) => $(element).toggle())
-})
+function manageIinteractionsWithBoard(value) {
+    if (!previousPiece) {
+        previousPiece = value
+        return
+    }
+
+    nextPiece = value
+
+    if (previousPiece == nextPiece) {
+        $(`[data-id="${previousPiece}"]`).addClass('turned')
+        allTurned.push(previousPiece)
+        previousPiece = ''
+        nextPiece = ''
+        alert('MATCH!')
+        endGame()
+    } else {
+        running = false
+        previousPiece = ''
+        nextPiece = ''
+        setTimeout(() => {
+            $('.piece.turn').removeClass('turn')
+            running = true
+        }, 1500)
+    }
+}
+
+function endGame() {
+    switch (indexBoardChoice) {
+        case 'small':
+            if (allTurned.length >= 6) {
+                alert('Parabéns') // Fim de Jogo
+            }
+            break
+
+        case 'medium':
+            if (allTurned.length >= 12) {
+                alert('Parabéns') // Fim de Jogo
+            }
+            break
+
+        case 'large':
+            if (allTurned.length >= 24) {
+                alert('Parabéns') // Fim de Jogo
+            }
+            break
+    }
+}
+
+function inicia() {
+    startButtonFuction()
+    allDifficultyChoiceFunction()
+}
+
+inicia()
