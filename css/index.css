@@ -37,7 +37,7 @@
     flex-direction: column;
 }
 .main-frame .container-options div {
-    width: 300px;
+    width: 320px;
     height: 60px;
     background-color: var(--color-yellow);
     font-size: 32px;
@@ -157,14 +157,27 @@
     color: var(--color-white);
 }
 
-.main-game .container-board-pieces {
+.main-game .container-board-pieces.small {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 30px;
 }
+.main-game .container-board-pieces.medium {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 30px;
+}
+.main-game .container-board-pieces.large {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 20px 30px;
+}
 
 .main-game .container-board-pieces .piece {
+    transition: 200ms;
     width: 200px;
     height: 100px;
     background-color: black;
@@ -174,12 +187,34 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    perspective: 600px;
 }
-.main-game .container-board-pieces .piece img {
+
+.main-game .container-board-pieces.large .piece {
+    transition: 200ms;
+    width: 160px;
+    height: 80px;
+    background-color: black;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 600px;
+}
+.main-game .container-board-pieces .piece.turn img {
     width: 100%;
 }
 .main-game .container-board-pieces .piece .piece-back {
     width: 200px;
     height: 100px;
     background-color: #d9d9d9;
+}
+
+.main-game .container-board-pieces .piece.turn {
+    transform: rotateY(180deg);
+}
+.main-game .container-board-pieces .piece.turn .piece-back {
+    background-color: var(--color-yellow);
 }
