@@ -24,6 +24,47 @@
         ></script>
     </head>
     <body>
+        <section class="loading-screen">
+            <div class="loading-icon"></div>
+        </section>
+
+        <section class="description-container" style="display: none">
+            <div class="title">Descrição</div>
+            <div class="content-1">
+                A poluição visual na biologia refere-se aos efeitos adversos que
+                os elementos visuais podem ter nos ecossistemas e nos seres
+                vivos. Isso abrange uma série de consequências, tais como
+                perturbação do comportamento animal, alteração da comunicação
+                visual, impacto na navegação e orientação, influência na
+                polinização e efeito na dinâmica ecológica.
+            </div>
+
+            <div class="content-2">
+                Portanto, é de extrema importância que consideremos
+                cuidadosamente o planejamento e o design de projetos, com o
+                objetivo de minimizar a poluição visual e preservar os
+                ecossistemas.
+            </div>
+        </section>
+
+        <section class="about-container" style="display: none">
+            <div class="title">Sobre</div>
+            <div class="content">
+                O jogo possui uma aparência retro, remetendo aos clássicos jogos
+                de fliperama. Sua jogabilidade é semelhante a um jogo da
+                memória, com a temática da poluição visual, apresentando imagens
+                relacionadas a esse tema. Ao clicar em uma imagem, ela se
+                revela, exibindo uma foto sobre poluição visual. O objetivo é
+                encontrar outra imagem idêntica para progredir no jogo. Caso o
+                jogador cometa um erro, a imagem será revertida à posição
+                inicial. Ele também tem tamanhos de tabuleiro diferentes na
+                Versão Desktop: Pequeno (3x4), Médio (4x6) e Grande (6x8) e
+                Versão Mobile: Pequeno (3x4), Médio (3x8) e Grande (4x12).
+            </div>
+        </section>
+
+        <div class="container-close-btn" style="display: none">Fechar</div>
+
         <section class="main-frame">
             <div class="logo-game">
                 <img
@@ -33,7 +74,7 @@
 
             <div class="container-options">
                 <div id="start">Começar</div>
-                <div>Descrição</div>
+                <div id="description">Descrição</div>
                 <div id="about">Sobre</div>
             </div>
 
@@ -53,15 +94,7 @@
         <section class="main-game" style="display: none">
             <div class="title-game">Tabuleiro Pequeno</div>
 
-            <div class="container-board-pieces">
-                <!-- <div class="piece" data-id="">
-                    <img style="display: none;"
-                        src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
-                    />
-    
-                    <div class="piece-back"></div>
-                </div> -->
-            </div>
+            <div class="container-board-pieces"></div>
 
             <div class="completed-game" style="display: none">
                 <div class="play-again">
@@ -71,6 +104,8 @@
                     </div>
                 </div>
             </div>
+
+            <div class="match-container">Pares foram correspondidos!</div>
         </section>
 
         <script

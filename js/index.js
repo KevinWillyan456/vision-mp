@@ -6,6 +6,7 @@ let running = true
 let allTurned = []
 
 const startButton = document.querySelector('#start')
+const descriptionButton = document.querySelector('#description')
 const aboutButton = document.querySelector('#about')
 
 const stageElementsStart = document.querySelectorAll(
@@ -138,7 +139,7 @@ function generatorBoardPieces(size) {
                     src="${shuffledData[i].image}"
                 />
 
-                <div class="piece-back">${shuffledData[i].id}</div>
+                <div class="piece-back"></div>
             </div>
         `
     }
@@ -158,8 +159,8 @@ function actionsInTheElement() {
                 ) {
                     return
                 } else {
-                    manageIinteractionsWithBoard($(element).data('id'))
                     element.classList.toggle('turn')
+                    manageIinteractionsWithBoard($(element).data('id'))
                 }
             }
         })
@@ -254,11 +255,23 @@ function startButtonFuction() {
         stageElementsStart.forEach((element) => $(element).toggle())
         stageElementsBoardChoice.forEach((element) => $(element).toggle())
     })
+    descriptionButton.addEventListener('click', () => {
+        $('.description-container').show()
+        $('.container-close-btn').show()
+    })
+    aboutButton.addEventListener('click', () => {
+        $('.about-container').show()
+        $('.container-close-btn').show()
+    })
     document
         .querySelector(
             '.main-game .completed-game .play-again .icon-play-again'
         )
         .addEventListener('click', routinePlayAgain)
+    $('.container-close-btn').click(() => {
+        $('.about-container ,.description-container').hide()
+        $('.container-close-btn').hide()
+    })
 }
 
 function manageIinteractionsWithBoard(value) {
@@ -274,7 +287,37 @@ function manageIinteractionsWithBoard(value) {
         allTurned.push(previousPiece)
         previousPiece = ''
         nextPiece = ''
-        alert('MATCH!')
+        $('.piece.turn').removeClass('turn')
+
+        $('.main-game .match-container').css('display', 'flex')
+        $('.main-game .match-container').addClass('entrace')
+        $('.main-game .match-container').on('animationend', function (anime) {
+            if (
+                anime.originalEvent.animationName == 'match-container-entrace'
+            ) {
+                $('.main-game .match-container').removeClass('entrace')
+                $('.main-game .match-container').addClass('output')
+
+                $('.main-game .match-container').on(
+                    'animationend',
+                    function (anime) {
+                        if (
+                            anime.originalEvent.animationName ==
+                            'match-container-output'
+                        ) {
+                            $('.main-game .match-container').removeClass(
+                                'output'
+                            )
+                            $('.main-game .match-container').css(
+                                'display',
+                                'none'
+                            )
+                        }
+                    }
+                )
+            }
+        })
+
         endGame()
     } else {
         running = false
@@ -326,9 +369,22 @@ function routinePlayAgain() {
     $('.completed-game').toggle()
 }
 
+function loadingScreen() {
+    var loading = $('.loading-screen')
+    $('.loading-screen').addClass('ready')
+
+    loading.on('animationend', function (anime) {
+        if (anime.originalEvent.animationName == 'loading-screen-fade') {
+            $('.loading-screen').removeClass('ready')
+            $('.loading-screen').toggle()
+        }
+    })
+}
+
 function inicia() {
+    loadingScreen()
     startButtonFuction()
     allDifficultyChoiceFunction()
 }
 
-inicia()
+window.addEventListener('load', inicia)
