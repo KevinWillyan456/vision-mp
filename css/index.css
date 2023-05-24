@@ -220,11 +220,24 @@
     overflow: hidden;
     perspective: 600px;
 }
+.main-game .container-board-pieces.small .piece:hover {
+    box-shadow: 0 0 25px #f4f85b;
+}
+.main-game .container-board-pieces.medium .piece:hover {
+    box-shadow: 0 0 25px #f4f85b;
+}
+.main-game .container-board-pieces.large .piece:hover {
+    box-shadow: 0 0 25px #f4f85b;
+}
 .main-game .container-board-pieces .piece.turn img {
     width: 100%;
+    display: block !important;
+    transform: rotateY(180deg);
 }
 .main-game .container-board-pieces .piece.turned img {
     width: 100%;
+    display: block !important;
+    transform: rotateY(180deg);
 }
 .main-game .container-board-pieces .piece .piece-back {
     width: 200px;
@@ -244,8 +257,10 @@
 }
 .main-game .container-board-pieces .piece.turn .piece-back {
     background-color: var(--color-yellow);
+    display: none;
 }
 .main-game .container-board-pieces .piece.turned .piece-back {
+    display: none;
     background-color: #ffbe32;
 }
 

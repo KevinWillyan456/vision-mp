@@ -135,7 +135,7 @@ function generatorBoardPieces(size) {
         containerBoardPieces.innerHTML += `
             <div class="piece" data-id="${shuffledData[i].id}">
                 <img style="display: none;"
-                    src="https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo"
+                    src="${shuffledData[i].image}"
                 />
 
                 <div class="piece-back">${shuffledData[i].id}</div>
@@ -283,7 +283,7 @@ function manageIinteractionsWithBoard(value) {
         setTimeout(() => {
             $('.piece.turn').removeClass('turn')
             running = true
-        }, 1500)
+        }, 2000)
     }
 }
 
@@ -291,18 +291,21 @@ function endGame() {
     switch (indexBoardChoice) {
         case 'small':
             if (allTurned.length >= 6) {
+                running = false
                 $('.completed-game').toggle()
             }
             break
 
         case 'medium':
             if (allTurned.length >= 12) {
+                running = false
                 $('.completed-game').toggle()
             }
             break
 
         case 'large':
             if (allTurned.length >= 24) {
+                running = false
                 $('.completed-game').toggle()
             }
             break
