@@ -220,6 +220,8 @@ function allDifficultyChoiceFunction() {
                 generatorBoardPieces(gameConfig.boardSize.small)
                 $('.main-frame').toggle()
                 $('.main-game').toggle()
+                $('.main-game .container-board-pieces').removeClass('medium')
+                $('.main-game .container-board-pieces').removeClass('large')
                 $('.main-game .container-board-pieces').addClass('small')
                 $('.main-game .title-game').html('Tabuleiro Pequeno')
                 return
@@ -231,6 +233,8 @@ function allDifficultyChoiceFunction() {
                 generatorBoardPieces(gameConfig.boardSize.medium)
                 $('.main-frame').toggle()
                 $('.main-game').toggle()
+                $('.main-game .container-board-pieces').removeClass('small')
+                $('.main-game .container-board-pieces').removeClass('large')
                 $('.main-game .container-board-pieces').addClass('medium')
                 $('.main-game .title-game').html('Tabuleiro Médio')
                 return
@@ -242,6 +246,8 @@ function allDifficultyChoiceFunction() {
                 generatorBoardPieces(gameConfig.boardSize.large)
                 $('.main-frame').toggle()
                 $('.main-game').toggle()
+                $('.main-game .container-board-pieces').removeClass('small')
+                $('.main-game .container-board-pieces').removeClass('medium')
                 $('.main-game .container-board-pieces').addClass('large')
                 $('.main-game .title-game').html('Tabuleiro Grande')
                 return
