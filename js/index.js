@@ -24,99 +24,99 @@ const allDifficultyChoice = document.querySelectorAll(
 const data = [
     {
         id: 1,
-        image: 'https://drive.google.com/uc?export=download&id=1e4J6KT6xVrWqyim_MhavSOzBKDOck1Vo',
+        image: 'https://i.ibb.co/ykZxRs6/a0.png',
     },
     {
         id: 2,
-        image: 'https://drive.google.com/uc?export=download&id=1VR4WJtXcran8w3sl4E_wMtu5o3RgNssD',
+        image: 'https://i.ibb.co/X2bqxDD/a1.png',
     },
     {
         id: 3,
-        image: 'https://drive.google.com/uc?export=download&id=1lLjjpIjmLUJCWKLzuiwNo8bPumnOYIp5',
+        image: 'https://i.ibb.co/g3g0qM7/a2.png',
     },
     {
         id: 4,
-        image: 'https://drive.google.com/uc?export=download&id=1OWiMJUNsM1Ig6wfwdmhiY_fOq7uvUqjD',
+        image: 'https://i.ibb.co/dkZcZ6y/a3.png',
     },
     {
         id: 5,
-        image: 'https://drive.google.com/uc?export=download&id=1FH3tOcV0dFOND4_wS0gKDZyq2j-jcgg_',
+        image: 'https://i.ibb.co/ZB48GgH/a4.png',
     },
     {
         id: 6,
-        image: 'https://drive.google.com/uc?export=download&id=1PEan_f54sPk0aBSZsmc70aVEZVrFjjJY',
+        image: 'https://i.ibb.co/hgCkwdG/a5.png',
     },
     {
         id: 7,
-        image: 'https://drive.google.com/uc?export=download&id=1KFJ4aqAQMyX0slOgRDKY_AbmIdFrspkX',
+        image: 'https://i.ibb.co/DKPqnLq/a6.png',
     },
     {
         id: 8,
-        image: 'https://drive.google.com/uc?export=download&id=1fuMbBEl34z9uy7w_etxeINI9NlDrRqI_',
+        image: 'https://i.ibb.co/qgXkfnK/a7.png',
     },
     {
         id: 9,
-        image: 'https://drive.google.com/uc?export=download&id=1FAU4LkB7N0hVcc3dsPAiF7wTGwXLDDRV',
+        image: 'https://i.ibb.co/7bnZcKR/a8.png',
     },
     {
         id: 10,
-        image: 'https://drive.google.com/uc?export=download&id=1gsDDitY9-lNiL7diHpuMceC7uPH_Hrwe',
+        image: 'https://i.ibb.co/8Y2VKLx/a9.png',
     },
     {
         id: 11,
-        image: 'https://drive.google.com/uc?export=download&id=1UmZsMh5bF9qkTjRO7HjYQ6FQ01ITj2mZ',
+        image: 'https://i.ibb.co/Wt9wbqP/a10.png',
     },
     {
         id: 12,
-        image: 'https://drive.google.com/uc?export=download&id=1WD2L2vaP7W9FTw2ezRHDP9lA-cc0Zh70',
+        image: 'https://i.ibb.co/Mp2Gpqs/a11.png',
     },
     {
         id: 13,
-        image: 'https://drive.google.com/uc?export=download&id=1WLI7UXhvZXsztyf2EWVvhMQ0TWiTtTm5',
+        image: 'https://i.ibb.co/S51Ysvp/a12.png',
     },
     {
         id: 14,
-        image: 'https://drive.google.com/uc?export=download&id=1YK75zRLTbTwkHNeUR06pUlrNSZGd1Fpl',
+        image: 'https://i.ibb.co/7n4t9jS/a13.png',
     },
     {
         id: 15,
-        image: 'https://drive.google.com/uc?export=download&id=1cedm_IUS7QM6aSUHqGmA9mtrvITUAGDf',
+        image: 'https://i.ibb.co/tsgPzJD/a14.png',
     },
     {
         id: 16,
-        image: 'https://drive.google.com/uc?export=download&id=1pGwQhRRShjXUqMbBMI2sWHyYMzUsfBnh',
+        image: 'https://i.ibb.co/FBzfYtj/a15.png',
     },
     {
         id: 17,
-        image: 'https://drive.google.com/uc?export=download&id=10qMaRJ0Rs1g_RhIWNKdAjPU97LtdoiCh',
+        image: 'https://i.ibb.co/b6bWtj3/a16.png',
     },
     {
         id: 18,
-        image: 'https://drive.google.com/uc?export=download&id=1TUS3zPUa_RpkpeZ6YIR2NEJYDmvOzoB8',
+        image: 'https://i.ibb.co/Sd9jtsb/a17.png',
     },
     {
         id: 19,
-        image: 'https://drive.google.com/uc?export=download&id=1keZvoUy5w84CTUyD9G89Lkz82_8qwkuS',
+        image: 'https://i.ibb.co/v1wH8Y4/a18.png',
     },
     {
         id: 20,
-        image: 'https://drive.google.com/uc?export=download&id=1c5c6E3tUeI8Lq4glRKWbKi59iD6ZxS1C',
+        image: 'https://i.ibb.co/Xy1Rf8m/a19.png',
     },
     {
         id: 21,
-        image: 'https://drive.google.com/uc?export=download&id=1fnas4xygZRB2rgDDmCPR-pM2-ljTgpn5',
+        image: 'https://i.ibb.co/LN2xqj3/a20.png',
     },
     {
         id: 22,
-        image: 'https://drive.google.com/uc?export=download&id=18M7dCd6jkqVPFKlFZVUprBafsWHIYuXe',
+        image: 'https://i.ibb.co/GHS8CV3/a21.png',
     },
     {
         id: 23,
-        image: 'https://drive.google.com/uc?export=download&id=1KFT-xw0lZ6sOe_-ZGoHdM8SmWg0SdaqF',
+        image: 'https://i.ibb.co/qNxvpJW/a22.png',
     },
     {
         id: 24,
-        image: 'https://drive.google.com/uc?export=download&id=1ISGpCLl5V2kTQ2IP7hsTrZiYsT3xECSE',
+        image: 'https://i.ibb.co/FmYW9BM/a23.png',
     },
 ]
 
