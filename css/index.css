@@ -4,7 +4,18 @@
     box-sizing: border-box;
     font-family: 'Press Start 2P', cursive;
 }
-
+body {
+    user-select: none;
+}
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--color-gray);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-yellow);
+}
 :root {
     --color-yellow: #f4f85b;
     --color-white: #ffffff;
@@ -224,14 +235,14 @@
 }
 .main-game .container-board-pieces.medium {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 30px;
 }
 .main-game .container-board-pieces.large {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     gap: 20px 30px;
 }
 
@@ -509,6 +520,62 @@
     cursor: pointer;
 }
 
+@media (max-width: 1900px) {
+    .main-frame .logo-game {
+        width: 700px;
+        top: 150px;
+        left: calc(50% - 700px / 2);
+    }
+}
+@media (max-width: 1700px) {
+    .main-frame .logo-game {
+        width: 600px;
+        top: 100px;
+        left: calc(50% - 600px / 2);
+    }
+    .main-frame .theme-description {
+        font-size: 28px;
+        width: 100%;
+        left: calc(50% - 100% / 2);
+    }
+    .main-frame .board-choice {
+        top: 100px;
+        font-size: 30px;
+    }
+    .main-game .container-board-pieces.small {
+        gap: 25px;
+    }
+    .main-game .container-board-pieces.small .piece {
+        width: 160px;
+        height: 80px;
+    }
+    .main-game .container-board-pieces.small .piece .piece-back {
+        width: 160px;
+        height: 80px;
+    }
+    .main-game .container-board-pieces.medium {
+        gap: 20px;
+    }
+    .main-game .container-board-pieces.medium .piece {
+        width: 160px;
+        height: 80px;
+    }
+    .main-game .container-board-pieces.medium .piece .piece-back {
+        width: 160px;
+        height: 80px;
+    }
+    .main-game .container-board-pieces.large {
+        gap: 10px;
+    }
+    .main-game .container-board-pieces.large .piece {
+        width: 120px;
+        height: 60px;
+    }
+    .main-game .container-board-pieces.large .piece .piece-back {
+        width: 120px;
+        height: 60px;
+    }
+}
 @media (max-width: 1260px) {
     .main-frame .board-choice {
         width: 780px;
@@ -571,7 +638,7 @@
         left: calc(50% - 864px / 1.5 / 2);
         pointer-events: none;
     }
-    .main-frame .theme-description {
+    .main-frame .thdescriptioneme- {
         font-size: 24px;
         width: 504px;
         left: calc(50% - 504px / 2);
@@ -596,8 +663,8 @@
     }
     .main-frame .theme-description {
         font-size: 16px;
-        width: 340px;
-        left: calc(50% - 340px / 2);
+        width: 100%;
+        left: calc(50% - 100% / 2);
         bottom: 80px;
     }
 
